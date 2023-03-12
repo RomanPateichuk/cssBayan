@@ -69,7 +69,6 @@ input[type='radio'] {
 
 @media(min-width: 1920px) {
   html {
-    background-color: yellow;
     font-size: 25px;
   }
 }
