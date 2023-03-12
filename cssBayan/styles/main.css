@@ -92,7 +92,16 @@ input[type='radio'] {
   }
 
   .mem_img {
-    width: 70%;
+    width: 80%;
+  }
+
+  .label {
+    justify-content: center;
+  }
+
+  .add_svg,
+  .remove_svg {
+    display: none;
   }
 }
 
