@@ -1,1 +1,1 @@
-https://RomanPateichuk.github.io/cssBayan/
+https://romanpateichuk.github.io/cssBayan/cssBayan/

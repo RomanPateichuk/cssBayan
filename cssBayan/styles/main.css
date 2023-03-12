@@ -1,16 +1,46 @@
 @import url("reset.css");
 @import url("normalize.css");
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+
+body {
+  font-family: Roboto, sans-serif;
+}
 
 .wrapper {
   margin: 0 auto;
-  padding: 0 3rem;
+  padding: 0 8rem;
 }
 
 .header {
   display: flex;
-  justify-content: center;
-  gap: 3rem;
-  padding: 3rem;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.add_svg,
+.remove_svg {
+  display: none;
+  width: 5%;
+}
+
+.main:hover>.section>:not(input:checked)+.label>.add_svg {
+  display: block;
+}
+
+.main:hover>.section>input:checked+.label>.remove_svg {
+  display: block;
+}
+
+.section:hover>.label>.remove_svg {
+  display: block;
+}
+
+.section:hover>.label>.add_svg {
+  display: none !important;
+}
+
+.header {
+  padding-top: 3rem;
 }
 
 .header_img {
@@ -29,7 +59,10 @@ input[type='radio'] {
 .mem_img {
   display: none;
   width: 50%;
-  height: 50%;
+}
+
+.mem_title {
+  font-size: 2rem;
 }
 
 .section:hover>.label>.mem_img {
@@ -37,9 +70,13 @@ input[type='radio'] {
 }
 
 .label {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 2rem;
+  gap: 2rem;
 }
 
-section>input:checked+.label>img {
+.section>input:checked+.label>.mem_img {
   display: block;
 }
