@@ -119,6 +119,10 @@ input[type='radio'] {
 }
 
 @media (hover: hover) {
+  .main:hover>.section>:not(input:checked)+.label>.mem_title {
+    color: blue;
+  }
+
   .main:hover>.section>:not(input:checked)+.label>.icon {
     opacity: 1;
   }
