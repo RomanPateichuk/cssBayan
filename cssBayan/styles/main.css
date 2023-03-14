@@ -17,17 +17,6 @@ body {
   flex-wrap: wrap;
   margin-bottom: 2rem;
   gap: 1rem;
-}
-
-.add_svg,
-.remove_svg {
-  opacity: 0;
-  transition-property: opacity;
-  transition-duration: .8s;
-  width: 5%;
-}
-
-.header {
   padding-top: 3rem;
 }
 
@@ -40,26 +29,40 @@ body {
   font-size: 3rem;
 }
 
+.icon {
+  opacity: 0;
+  transition-property: all;
+  transition-duration: .8s;
+  width: 5%;
+  grid-area: icon;
+}
+
 input[type='radio'] {
   display: none;
 }
 
 .mem_img {
   height: 0;
-  width: 40rem;
   transition-property: height;
   transition-duration: .8s;
+  grid-area: img;
+  align-self: center;
+
 }
 
 .mem_title {
   font-size: 2rem;
+  grid-area: text;
 }
 
 .label {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "text icon"
+    "img img";
   margin: 2rem 0;
+  gap: 2rem;
 }
 
 .section>input:checked+.label>.mem_img {
@@ -98,16 +101,11 @@ input[type='radio'] {
   }
 
   .mem_img {
-    width: 80%;
+    width: 100%;
   }
 
   .label {
     justify-content: center;
-  }
-
-  .add_svg,
-  .remove_svg {
-    display: none;
   }
 }
 
@@ -121,20 +119,18 @@ input[type='radio'] {
 }
 
 @media (hover: hover) {
-  .main:hover>.section>:not(input:checked)+.label>.add_svg {
+  .main:hover>.section>:not(input:checked)+.label>.icon {
     opacity: 1;
   }
 
-  .main:hover>.section>input:checked+.label>.remove_svg {
+  .main:hover>.section>input:checked+.label>.icon {
     opacity: 1;
+    transform: rotate(45deg);
   }
 
-  .section:hover>.label>.remove_svg {
+  .section:hover>.label>.icon {
     opacity: 1;
-  }
-
-  .section:hover>.label>.add_svg {
-    opacity: 0 !important;
+    transform: rotate(45deg);
   }
 
   .section:hover {
