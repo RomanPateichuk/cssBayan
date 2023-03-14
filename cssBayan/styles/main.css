@@ -1,0 +1,148 @@
+@import url("reset.css");
+@import url("normalize.css");
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+
+body {
+  font-family: Roboto, sans-serif;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 0 8rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  padding-top: 3rem;
+}
+
+.header_img {
+  display: block;
+  width: 15rem;
+}
+
+.header_title {
+  font-size: 3rem;
+}
+
+.icon {
+  opacity: 0;
+  transition-property: all;
+  transition-duration: .8s;
+  width: 5%;
+  grid-area: icon;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+.mem_img {
+  height: 0;
+  transition-property: height;
+  transition-duration: .8s;
+  grid-area: img;
+  align-self: center;
+
+}
+
+.mem_title {
+  font-size: 2rem;
+  grid-area: text;
+}
+
+.label {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "text icon"
+    "img img";
+  margin: 2rem 0;
+  gap: 2rem;
+}
+
+.section>input:checked+.label>.mem_img {
+  height: 20rem;
+  border: .3rem solid red
+}
+
+@media(min-width: 1920px) {
+
+  .header_title,
+  .mem_title {
+    font-size: 2rem;
+  }
+}
+
+@media(max-width: 1920px) {
+
+  .header_title,
+  .mem_title {
+    font-size: 2rem;
+  }
+}
+
+@media(max-width: 820px) {
+
+  .header_title,
+  .mem_title {
+    font-size: 1.5rem;
+  }
+
+}
+
+@media(max-width: 710px) {
+  .wrapper {
+    padding: 0 1rem;
+  }
+
+  .mem_img {
+    width: 100%;
+  }
+
+  .label {
+    justify-content: center;
+  }
+}
+
+
+@media(max-width: 320px) {
+
+  .header_title,
+  .mem_title {
+    font-size: 1rem;
+  }
+}
+
+@media (hover: hover) {
+  .main:hover>.section>:not(input:checked)+.label>.mem_title {
+    color: blue;
+  }
+
+  .main:hover>.section>:not(input:checked)+.label>.icon {
+    opacity: 1;
+  }
+
+  .main:hover>.section>input:checked+.label>.icon {
+    opacity: 1;
+    transform: rotate(45deg);
+  }
+
+  .section:hover>.label>.icon {
+    opacity: 1;
+    transform: rotate(45deg);
+  }
+
+  .section:hover {
+    cursor: pointer;
+  }
+
+  .section:hover>.label>.mem_img {
+    height: 20rem;
+  }
+
+}
